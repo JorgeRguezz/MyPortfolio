@@ -1,4 +1,5 @@
-import { Reveal, Section, TagList } from '../components'
+import { ButtonLink, Reveal, Section, TagList } from '../components'
+import { ArrowUpRightIcon } from './contact/icons'
 import { experience } from '../content'
 import { glueSeparators } from './text'
 
@@ -38,6 +39,19 @@ export function Experience() {
               ))}
             </ul>
             {item.tags && item.tags.length > 0 ? <TagList items={item.tags} className="mt-3" /> : null}
+            {item.link ? (
+              <ButtonLink
+                variant="ghost"
+                href={item.link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 min-h-11 -my-2.5 text-sm"
+              >
+                {item.link.label}
+                <ArrowUpRightIcon />
+                <span className="sr-only"> (opens in new tab)</span>
+              </ButtonLink>
+            ) : null}
           </Reveal>
         ))}
       </ol>

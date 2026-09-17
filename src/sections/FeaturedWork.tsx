@@ -113,7 +113,7 @@ export function FeaturedWork() {
           Featured <em>work</em>
         </>
       }
-      lead="Three systems, each told the same way: what went in, what I built, what came out."
+      lead="Four systems, each told the same way: what went in, what I built, what came out."
     >
       <div className="space-y-10">
         {featuredProjects.map((project) => (

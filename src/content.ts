@@ -121,6 +121,30 @@ export const featuredProjects: Project[] = [
     ],
   },
   {
+    id: 'alumni-network',
+    name: 'ETSIT-UPM Alumni Network',
+    hook: 'The alumni platform of my engineering school, built with its leadership and live today.',
+    context: 'Product · founding team of five · launched Jul 2026',
+    input: {
+      label: 'No shared platform',
+      detail: 'Alumni, school leadership and events with no common system or credentials.',
+    },
+    system: [
+      { label: 'Co-design', detail: 'Product design and scope agreed directly with school leadership.' },
+      { label: 'Onboard', detail: 'Registration flow and QR membership credentials.' },
+      { label: 'Validate', detail: 'Admin validation of members and event-access workflows.' },
+      { label: 'Integrate', detail: 'Payment and QR-generation APIs wired into the platform.' },
+    ],
+    output: {
+      label: 'Live platform',
+      detail: 'Launched July 2026 for the school’s alumni community; maintained and improved since.',
+    },
+    outcome:
+      'Five people took it from idea to launch with the school. I built the registration, credential, validation and event-access flows and still maintain the platform.',
+    stack: ['Product design', 'Registration', 'QR credentials', 'Payments API', 'Admin workflows'],
+    links: [{ label: 'Live platform', href: 'https://alumni.etsit.upm.es' }],
+  },
+  {
     id: 'llm-router',
     name: 'Intelligent LLM Router',
     hook: 'Sends each prompt to the cheapest model that can answer it well.',
@@ -177,11 +201,6 @@ export const featuredProjects: Project[] = [
 
 export const otherProjects = [
   {
-    name: 'ETSIT-UPM Alumni Network',
-    detail: 'Registration, QR membership credentials, payments and event access. Launched July 2026 with a five-person team.',
-    href: undefined,
-  },
-  {
     name: 'Tennis match analytics',
     detail: 'Match statistics from object detection on match video. First computer-vision project.',
     href: 'https://github.com/JorgeRguezz/ComputerVisionTennisProject',
@@ -207,6 +226,8 @@ export type ExperienceItem = {
   end: string
   bullets: string[]
   tags?: string[]
+  /** Optional external link (live product, org site). */
+  link?: { label: string; href: string }
 }
 
 export const experience: ExperienceItem[] = [
@@ -240,6 +261,7 @@ export const experience: ExperienceItem[] = [
   {
     role: 'Founding Team Member',
     org: 'ETSIT-UPM Alumni Network',
+    link: { label: 'alumni.etsit.upm.es', href: 'https://alumni.etsit.upm.es' },
     location: 'Remote',
     start: 'Oct 2025',
     end: 'Present',
