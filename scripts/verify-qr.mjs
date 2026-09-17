@@ -19,7 +19,7 @@ import { PUBLIC, urlFromArgv } from './lib.mjs'
 const argv = process.argv.slice(2)
 const pageIdx = argv.indexOf('--page')
 const pageUrl = pageIdx >= 0 ? argv[pageIdx + 1] : null
-const staticArgs = argv.filter((a, i) => i !== pageIdx && i !== pageIdx + 1)
+const staticArgs = pageIdx >= 0 ? argv.filter((_a, i) => i !== pageIdx && i !== pageIdx + 1) : argv
 const expected = urlFromArgv(staticArgs)
 
 let failures = 0
